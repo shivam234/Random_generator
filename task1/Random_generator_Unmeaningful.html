@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+function randomString() {
+	var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+	var string_length = 8;
+	var randomstring = '';
+	for (var i=0; i<string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		randomstring += chars.substring(rnum,rnum+1);
+	}
+	document.randform.randomfield.value = randomstring;
+}
+</script>
+</head>
+<body>
+<form name="randform">
+<input type="button" value="Create Random String" onClick="randomString()">;
+<input type="text" name="randomfield" value="">
+</form>
+</body>
+</html>

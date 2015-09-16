@@ -1,0 +1,24 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+<input type="button" id="random-words" name="random-words" value="Generate Random Words" class="frmbtn">
+<input type="text" id="random" value="">
+</body>
+<script type="text/javascript">
+$("#random-words").click(function(){
+	RandomWord(); 	
+});
+    function RandomWord() {
+        $.ajax({
+            type: "GET",
+            url: "http://randomword.setgetgo.com/get.php",
+            dataType: "jsonp",
+            jsonpCallback: 'RandomWordComplete'
+        });
+    }
+
+    function RandomWordComplete(data) {
+	$("#random").val(data.Word);
+    }
+</script>    
